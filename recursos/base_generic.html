@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}ConstruBase{% endblock %}</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #f2efe9;
+            color: #2b2822;
+        }
+        header {
+            background: #33291f;
+            color: #f2efe9;
+            padding: 22px 40px;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 1.5rem;
+            letter-spacing: 0.02em;
+        }
+        header p {
+            margin: 4px 0 0;
+            font-size: 0.9rem;
+            color: #cbbfa9;
+        }
+        nav {
+            background: #c8802f;
+            padding: 10px 40px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 28px;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        main {
+            padding: 40px;
+        }
+        .hero {
+            background: #ffffff;
+            border: 1px solid #e2dccd;
+            border-radius: 10px;
+            padding: 32px;
+            max-width: 720px;
+        }
+        .hero h2 {
+            margin-top: 0;
+            color: #33291f;
+        }
+        .hero p {
+            line-height: 1.6;
+        }
+        footer {
+            padding: 20px 40px;
+            color: #8a8272;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ConstruBase</h1>
+        <p>Venda de materiais de construção</p>
+    </header>
+
+    <nav>
+        <a href="{% url 'index' %}">Início</a>
+        <a href="{% url 'clientes' %}">Clientes</a>
+        <a href="{% url 'produtos' %}">Produtos</a>
+        <a href="{% url 'faturas' %}">Faturas</a>
+    </nav>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        ConstruBase — aplicação desenvolvida em Django no âmbito da UC de Aplicações de Bases de Dados.
+    </footer>
+</body>
+</html>
